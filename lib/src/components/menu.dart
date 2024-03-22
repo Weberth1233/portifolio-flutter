@@ -6,7 +6,7 @@ class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width / 4,
+      width: MediaQuery.of(context).size.width / 3,
       height: 40,
       decoration: BoxDecoration(
         color: Colors.white,

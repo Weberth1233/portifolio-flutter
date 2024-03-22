@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Center(
           child: Container(
-            width: sizeScreen < 1000 ? double.infinity : sizeScreen / 1.7,
+            width: sizeScreen < 1200 ? double.infinity : sizeScreen / 1.7,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Center(
                           child:
-                              sizeScreen > 1220 ? const Menu() : Container()),
+                              sizeScreen > 1000 ? const Menu() : Container()),
                       const SizedBox(
                         height: 50,
                       ),
@@ -66,7 +66,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             //width: MediaQuery.of(context).size.width / 3,
                             width: sizeScreen < 800
                                 ? double.infinity
-                                : medio * 0.5,
+                                : sizeScreen > 1916
+                                    ? medio * 0.4
+                                    : medio * 0.6,
+
                             child: Column(
                               children: [
                                 const Text(
@@ -85,14 +88,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               ],
                             ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
-                                vertical: 120, horizontal: 50),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: 100, horizontal: 50),
                             child: SizedBox(
                               //width:
                               // MediaQuery.of(context).size.width < 520 ? 100 : 320,
-                              width: 300,
-                              child: Image(
+                              width: sizeScreen < 1000 ? 200 : 400,
+                              child: const Image(
                                   image: NetworkImage(
                                       "https://reactfolio.tharindu.dev/homepage.jpg")),
                             ),
