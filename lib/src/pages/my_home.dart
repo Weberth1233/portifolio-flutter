@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portifolio/src/components/card.dart';
 import 'package:portifolio/src/components/contact_item.dart';
+import 'package:portifolio/src/components/icon_button_item.dart';
 import 'package:portifolio/src/components/menu.dart';
 import 'package:portifolio/src/utils/colorhex.dart';
+import 'package:portifolio/src/utils/url.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -17,8 +19,6 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     double sizeScreen = MediaQuery.of(context).size.width;
     double medio = (sizeScreen / 2);
-    print('Medio: $medio');
-    print(sizeScreen);
 
     Color colorFromHex(String hexColor) {
       final hexCode = hexColor.replaceAll('#', '');
@@ -101,49 +101,48 @@ class _MyHomePageState extends State<MyHomePage> {
                         const SizedBox(
                           height: 10,
                         ),
-                        Align(
+                        const Align(
                           alignment: Alignment.bottomLeft,
                           child: Wrap(
                             spacing: 25,
                             children: [
-                              Icon(
-                                Icons.facebook,
-                                size: 25,
-                                color: colorFromHex("#909096"),
-                              ),
-                              Icon(
-                                Icons.email,
-                                size: 25,
-                                color: colorFromHex("#909096"),
-                              ),
-                              Icon(
-                                FontAwesomeIcons.linkedin,
-                                size: 25,
-                                color: colorFromHex("#909096"),
-                              ),
-                              Icon(
-                                FontAwesomeIcons.instagram,
-                                size: 25,
-                                color: colorFromHex("#909096"),
-                              ),
-                              Icon(
-                                FontAwesomeIcons.github,
-                                size: 25,
-                                color: colorFromHex("#909096"),
-                              ),
+                              IconButtonItem(
+                                  iconData: Icons.facebook,
+                                  url: 'https://github.com/Weberth1233'),
+                              IconButtonItem(
+                                  iconData: Icons.email,
+                                  url: 'https://github.com/Weberth1233'),
+                              IconButtonItem(
+                                  iconData: FontAwesomeIcons.linkedin,
+                                  url:
+                                      'https://www.linkedin.com/in/weberth-e-949388138/'),
+                              IconButtonItem(
+                                  iconData: FontAwesomeIcons.instagram,
+                                  url: 'https://github.com/Weberth1233'),
+                              IconButtonItem(
+                                  iconData: FontAwesomeIcons.github,
+                                  url: 'https://github.com/Weberth1233'),
                             ],
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 40,
+                    ),
+                    const Text(
+                      "Projetos",
+                      style:
+                          TextStyle(fontSize: 35, fontWeight: FontWeight.w600),
+                    ),
+                    const SizedBox(
+                      height: 40,
                     ),
                     const Center(
                       child: SizedBox(
                         width: double.infinity,
                         child: Wrap(
-                          runSpacing: 5,
+                          runSpacing: 4,
                           spacing:
                               10, // Define o espaçamento entre os filhos do Wrap
                           alignment: WrapAlignment
@@ -154,25 +153,26 @@ class _MyHomePageState extends State<MyHomePage> {
                               subtitile:
                                   "Teste para vaga de desenvolvedor front-end em uma empresa terceiraza. o Teste consistia em fazer um gerenciador de usuários e projetos aplicando alguns validaçõies; Tecnologias utilizadas foram o Flutter/Dart e o Django/Python ",
                               iconData: FontAwesomeIcons.react,
+                              viewButton: true,
                             ),
                             CardComponent(
-                              title: 'Curso React',
-                              subtitile:
-                                  "Projeto desenvolvido para um curso de React JS - Udemy",
-                              iconData: FontAwesomeIcons.react,
-                            ),
+                                title: 'Curso React',
+                                subtitile:
+                                    "Projeto desenvolvido para um curso de React JS - Udemy",
+                                iconData: FontAwesomeIcons.react,
+                                viewButton: true),
                             CardComponent(
-                              title: 'TakeYourUmbrellaApp',
-                              subtitile:
-                                  "Aplicativo desenvolvido em flutter, utilizando uma API para coletar dados meteorologicos e apresenta-los no app",
-                              iconData: Icons.flutter_dash_rounded,
-                            ),
+                                title: 'TakeYourUmbrellaApp',
+                                subtitile:
+                                    "Aplicativo desenvolvido em flutter, utilizando uma API para coletar dados meteorologicos e apresenta-los no app",
+                                iconData: Icons.flutter_dash_rounded,
+                                viewButton: true),
                             CardComponent(
-                              title: 'project_yourtravel',
-                              subtitile:
-                                  "I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. ",
-                              iconData: Icons.flutter_dash_outlined,
-                            ),
+                                title: 'project_yourtravel',
+                                subtitile:
+                                    "I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. ",
+                                iconData: Icons.flutter_dash_outlined,
+                                viewButton: true),
                           ],
                         ),
                       ),
@@ -189,30 +189,30 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: SizedBox(
                         width: double.infinity,
                         child: Wrap(
-                          runSpacing: 5,
+                          runSpacing: 4,
                           spacing:
                               10, // Define o espaçamento entre os filhos do Wrap
                           alignment: WrapAlignment.spaceBetween,
                           children: [
                             CardComponent(
-                              title:
-                                  'Alpha terceirização - Palmas(TO) - Atualmente',
-                              subtitile:
-                                  "Desenvolvedor de software Junior -(Presencial) Competências: Flutter - Desenvolvimento WEB - Front-End - Pyhton-Django- API REst - Docker",
-                              iconData: Icons.workspace_premium_sharp,
-                            ),
+                                title:
+                                    'Alpha terceirização - Palmas(TO) - Atualmente',
+                                subtitile:
+                                    "Desenvolvedor de software Junior -(Presencial) Competências: Flutter - Desenvolvimento WEB - Front-End - Pyhton-Django- API REst - Docker",
+                                iconData: Icons.workspace_premium_sharp,
+                                viewButton: false),
                             CardComponent(
-                              title: 'SolarView - Minas Gerais(BH) - 4 mesês',
-                              subtitile:
-                                  "Desenvolvedor de software Junior -(Remoto) Competências: PHP - MYSQL - Desenvolvimento WEB",
-                              iconData: Icons.workspace_premium_sharp,
-                            ),
+                                title: 'SolarView - Minas Gerais(BH) - 4 mesês',
+                                subtitile:
+                                    "Desenvolvedor de software Junior -(Remoto) Competências: PHP - MYSQL - Desenvolvimento WEB",
+                                iconData: Icons.workspace_premium_sharp,
+                                viewButton: false),
                             CardComponent(
-                              title: 'SolarView - Minas Gerais(BH) - 5 mesês',
-                              subtitile:
-                                  "Assistente de TI -(Remoto) Competências: Postman - MYSQL - Suporte Tecnico",
-                              iconData: Icons.workspace_premium_sharp,
-                            ),
+                                title: 'SolarView - Minas Gerais(BH) - 5 mesês',
+                                subtitile:
+                                    "Assistente de TI -(Remoto) Competências: Postman - MYSQL - Suporte Tecnico",
+                                iconData: Icons.workspace_premium_sharp,
+                                viewButton: false),
                           ],
                         ),
                       ),
@@ -229,22 +229,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: SizedBox(
                         width: double.infinity,
                         child: Wrap(
-                          runSpacing: 5,
+                          runSpacing: 4,
                           spacing:
-                              10, // Define o espaçamento entre os filhos do Wrap
+                              8, // Define o espaçamento entre os filhos do Wrap
                           alignment: WrapAlignment.spaceBetween,
                           children: [
                             CardComponent(
-                              title:
-                                  'Bacharel em Sistemas de Informação(UNITINS) - Sistemas de Informação',
-                              subtitile: "Completo em 4 anos de curso",
+                              title: 'Bacharel em Sistemas de Informação',
+                              subtitile:
+                                  "Completo em 4 anos de curso(2019- 2023) - UNITINS(Universidade Estadual do Tocantins) ",
                               iconData: Icons.school,
+                              viewButton: false,
                             ),
                             CardComponent(
                               title: 'Bolsista do NIT',
                               subtitile:
-                                  "Suporte tecnico de TI- Manutenção de equipamentos de informação e configuração de rede e demais componentes. Testes nos sitemas de informação",
+                                  "Desenvolvimento de software, especificação de requisitos, projeto, implementação, validação e manutenção, no âmbito do Programa.",
                               iconData: Icons.school,
+                              viewButton: false,
                             ),
                             CardComponent(
                               title:
@@ -252,6 +254,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               subtitile:
                                   "Suporte tecnico de TI- Manutenção de equipamentos de informação e configuração de rede e demais componentes. Testes nos sitemas de informação",
                               iconData: Icons.school,
+                              viewButton: false,
                             ),
                             CardComponent(
                               title:
@@ -259,6 +262,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               subtitile:
                                   "Documentação- Requisitos funcionais e não funcionais/Diagramas(Caso de uso - Classes e atividade)/Prototipo",
                               iconData: Icons.school,
+                              viewButton: false,
                             ),
                           ],
                         ),
