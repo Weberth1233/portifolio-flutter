@@ -7,14 +7,12 @@ class ContactItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          IconButton(onPressed: () {}, icon: Icon(icon)),
-          const SizedBox(width: 10),
-          Text(text)
-        ],
-      ),
+    return Row(
+      children: [
+        IconButton(onPressed: () {}, icon: Icon(icon)),
+        const SizedBox(width: 10),
+        Text(text)
+      ],
     );
   }
 }

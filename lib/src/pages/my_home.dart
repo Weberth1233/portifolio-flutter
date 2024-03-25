@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:portifolio/src/components/card.dart';
 import 'package:portifolio/src/components/contact_item.dart';
 import 'package:portifolio/src/components/icon_button_item.dart';
-import 'package:portifolio/src/components/menu.dart';
+import 'package:portifolio/src/pages/widgets/menu.dart';
 import 'package:portifolio/src/utils/colorhex.dart';
-import 'package:portifolio/src/utils/url.dart';
+import '../components/card_item.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -20,13 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
     double sizeScreen = MediaQuery.of(context).size.width;
     double medio = (sizeScreen / 2);
 
-    Color colorFromHex(String hexColor) {
-      final hexCode = hexColor.replaceAll('#', '');
-      return Color(int.parse('FF$hexCode', radix: 16));
-    }
-
     return Scaffold(
-        backgroundColor: colorFromHex("#fafafa"),
+        backgroundColor: ColorHex.colorFromHex("#fafafa"),
         body: SingleChildScrollView(
           child: Center(
             child: Container(
@@ -79,7 +73,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     style: TextStyle(
                                         fontSize: 15,
                                         fontStyle: FontStyle.italic,
-                                        color: colorFromHex("#909096")),
+                                        color:
+                                            ColorHex.colorFromHex("#909096")),
                                   ),
                                 ],
                               ),
@@ -148,26 +143,26 @@ class _MyHomePageState extends State<MyHomePage> {
                           alignment: WrapAlignment
                               .spaceBetween, // Alinha os itens// Alinha os itens
                           children: [
-                            CardComponent(
+                            CardItem(
                               title: 'public_ministry_test',
                               subtitile:
                                   "Teste para vaga de desenvolvedor front-end em uma empresa terceiraza. o Teste consistia em fazer um gerenciador de usuários e projetos aplicando alguns validaçõies; Tecnologias utilizadas foram o Flutter/Dart e o Django/Python ",
                               iconData: FontAwesomeIcons.react,
                               viewButton: true,
                             ),
-                            CardComponent(
+                            CardItem(
                                 title: 'Curso React',
                                 subtitile:
                                     "Projeto desenvolvido para um curso de React JS - Udemy",
                                 iconData: FontAwesomeIcons.react,
                                 viewButton: true),
-                            CardComponent(
+                            CardItem(
                                 title: 'TakeYourUmbrellaApp',
                                 subtitile:
                                     "Aplicativo desenvolvido em flutter, utilizando uma API para coletar dados meteorologicos e apresenta-los no app",
                                 iconData: Icons.flutter_dash_rounded,
                                 viewButton: true),
-                            CardComponent(
+                            CardItem(
                                 title: 'project_yourtravel',
                                 subtitile:
                                     "I am a backend developer with expertise in Node.js. I have experience in building scalable, secure and reliable web applications using various frameworks and technologies. ",
@@ -194,20 +189,20 @@ class _MyHomePageState extends State<MyHomePage> {
                               10, // Define o espaçamento entre os filhos do Wrap
                           alignment: WrapAlignment.spaceBetween,
                           children: [
-                            CardComponent(
+                            CardItem(
                                 title:
                                     'Alpha terceirização - Palmas(TO) - Atualmente',
                                 subtitile:
                                     "Desenvolvedor de software Junior -(Presencial) Competências: Flutter - Desenvolvimento WEB - Front-End - Pyhton-Django- API REst - Docker",
                                 iconData: Icons.workspace_premium_sharp,
                                 viewButton: false),
-                            CardComponent(
+                            CardItem(
                                 title: 'SolarView - Minas Gerais(BH) - 4 mesês',
                                 subtitile:
                                     "Desenvolvedor de software Junior -(Remoto) Competências: PHP - MYSQL - Desenvolvimento WEB",
                                 iconData: Icons.workspace_premium_sharp,
                                 viewButton: false),
-                            CardComponent(
+                            CardItem(
                                 title: 'SolarView - Minas Gerais(BH) - 5 mesês',
                                 subtitile:
                                     "Assistente de TI -(Remoto) Competências: Postman - MYSQL - Suporte Tecnico",
@@ -234,21 +229,21 @@ class _MyHomePageState extends State<MyHomePage> {
                               8, // Define o espaçamento entre os filhos do Wrap
                           alignment: WrapAlignment.spaceBetween,
                           children: [
-                            CardComponent(
+                            CardItem(
                               title: 'Bacharel em Sistemas de Informação',
                               subtitile:
                                   "Completo em 4 anos de curso(2019- 2023) - UNITINS(Universidade Estadual do Tocantins) ",
                               iconData: Icons.school,
                               viewButton: false,
                             ),
-                            CardComponent(
+                            CardItem(
                               title: 'Bolsista do NIT',
                               subtitile:
                                   "Desenvolvimento de software, especificação de requisitos, projeto, implementação, validação e manutenção, no âmbito do Programa.",
                               iconData: Icons.school,
                               viewButton: false,
                             ),
-                            CardComponent(
+                            CardItem(
                               title:
                                   'Estagio(Não obrigatório) - SEFAZ - Palmas(TO) - 1 ano e 9 mesês',
                               subtitile:
@@ -256,7 +251,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               iconData: Icons.school,
                               viewButton: false,
                             ),
-                            CardComponent(
+                            CardItem(
                               title:
                                   'Estagio(Obrigatório) - UNITINS - Palmas(TO) - 6 meses',
                               subtitile:

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:portifolio/src/utils/colorhex.dart';
 
-class CardComponent extends StatelessWidget {
+class CardItem extends StatelessWidget {
   final String title;
   final String subtitile;
   final IconData iconData;
   final bool viewButton;
 
-  const CardComponent(
+  const CardItem(
       {super.key,
       required this.title,
       required this.subtitile,
@@ -27,8 +26,9 @@ class CardComponent extends StatelessWidget {
         children: [
           Container(
             decoration: const BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.all(Radius.circular(20))),
+              color: Colors.green,
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+            ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Icon(
