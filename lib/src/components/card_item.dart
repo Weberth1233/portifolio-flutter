@@ -8,13 +8,15 @@ class CardItem extends StatelessWidget {
   final String subtitile;
   final IconData iconData;
   final bool viewButton;
+  final Color color;
 
   const CardItem(
       {super.key,
       required this.title,
       required this.subtitile,
       required this.iconData,
-      required this.viewButton});
+      required this.viewButton,
+      required this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +27,9 @@ class CardItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            decoration: const BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -60,7 +62,7 @@ class CardItem extends StatelessWidget {
               ? Container()
               : Row(
                   children: [
-                    const Icon(Icons.fingerprint),
+                    const Icon(Icons.ads_click),
                     TextButton(
                       onPressed: () {
                         Get.defaultDialog(
@@ -73,6 +75,7 @@ class CardItem extends StatelessWidget {
                                 horizontal: 30, vertical: 30),
                             child: Column(
                               children: [
+                                Image.asset('assets/images/Splash.png'),
                                 Text(
                                   subtitile,
                                   style: const TextStyle(
@@ -110,7 +113,8 @@ class CardItem extends StatelessWidget {
                       },
                       child: const Text(
                         "Visualizar",
-                        style: TextStyle(color: Colors.green),
+                        style: TextStyle(
+                            color: Colors.green, fontWeight: FontWeight.bold),
                       ),
                     )
                   ],
